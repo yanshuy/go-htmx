@@ -2,7 +2,19 @@ package components
 
 import "strconv"
 
-templ counts(global, user int){
-    <div>Global: {strconv.Itoa(global)}</div>
-    <div>User: {strconv.Itoa(user)}</div>
+templ Form(global, user int) {
+	<form id="countsForm" class="flex gap-4" hx-post="/counter" hx-select="#countsForm" hx-swap="outerHTML">
+        <div>Global: {strconv.Itoa(global)}</div>
+        <div>User: {strconv.Itoa(user)}</div>
+		<div><button type="submit" name="global" value="global" class="border rounded-2xl p-2">Global</button></div>
+		<div><button type="submit" name="user" value="user" class="border rounded-2xl p-2">User</button></div>
+	</form>
+}
+
+templ Page(global, user int) {
+   <link href="../static/css/output.css" rel="stylesheet">
+   <script src="/static/js/htmx.min.js"></script>
+    <div class="mx-auto">    
+        @form(global, user)
+    </div>
 }

@@ -1,9 +1,6 @@
 watch:
-	@air & \
-	 templ generate -watch air
-     
-tw:
-	npx @tailwindcss/cli -i ./static/css/input.css -o ./static/css/output.css --watch
+	npx @tailwindcss/cli -i ./static/css/input.css -o ./static/css/output.css --watch  & \
+	templ generate --watch
 
 run:
 	@go run main.go
