@@ -1,3 +1,6 @@
+.env
+.envrc
+
 *templ.go
 tmp/
 node_modules/
