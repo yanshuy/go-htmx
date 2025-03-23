@@ -23,6 +23,7 @@ func main() {
 
 	component := components.Home("john")
 	router.Handle("GET /home", templ.Handler(component))
+	router.Handle("/404", templ.Handler(components.NotFoundComponent(), templ.WithStatus(http.StatusNotFound)))
 
 	server := &http.Server{
 		Addr:    ":4200",

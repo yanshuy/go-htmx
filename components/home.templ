@@ -1,8 +1,5 @@
 package components
 
-templ Hello(name string) {
-	<div>Hello, { name }</div>
-}
 
 templ Home(name string) {
 	<!DOCTYPE html>
@@ -14,7 +11,6 @@ templ Home(name string) {
 		<link href="../static/css/output.css" rel="stylesheet">
 	</head>
 	<body>
-		@Hello(name)
 		<article class="prose lg:prose-xl">
 		<h1>Garlic bread with cheese: What the science tells us</h1>
 		<p>

@@ -1,0 +1,8 @@
+package components
+
+import "strconv"
+
+templ counts(global, user int){
+    <div>Global: {strconv.Itoa(global)}</div>
+    <div>User: {strconv.Itoa(user)}</div>
+}
